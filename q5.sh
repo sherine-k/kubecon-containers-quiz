@@ -35,4 +35,4 @@ rm -fr /tmp/myhelm-v01/
 rm -fr /tmp/myhelm_extracted
 # Fin Q5
 
-p "Fini !"
+p "Done !"

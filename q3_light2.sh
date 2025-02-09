@@ -22,7 +22,7 @@ cp -r ubi-micro9315-oci /tmp
 #pe 'tree /tmp/ubi-micro9315-dv2 # Docker'
 #pe 'tree /tmp/ubi-micro9315-oci # OCI'
 
-p 'Difference des manifests'
+p 'Difference between manifests'
 pe 'cat /tmp/ubi-micro9315-dv2/manifest.json | jq # Docker'
 #pe 'cat /tmp/ubi-micro9315-oci/index.json | jq # OCI Index'
 
@@ -58,4 +58,4 @@ cd ..
 rm -fr /tmp/ubi-micro9315-oci
 rm -fr /tmp/ubi-micro9315-dv2
 
-p "Fini !"
+p "Done !"

@@ -14,12 +14,12 @@ clear
 
 cd gophers-api
 
-p "Build d'une image"
+p "Building an image"
 pe 'docker build . -t gophers-api:friday -f Dockerfile-golang21'
 
 pe 'docker image ls gophers-api'
 
-p "Changement de golang 1.21 vers 1.20"
+p "Switching from golang 1.21 to 1.20"
 pe 'vi Dockerfile-golang21'
 
 pe 'docker build . -t gophers-api:friday -f Dockerfile-golang21'
@@ -28,10 +28,10 @@ pe 'docker image ls gophers-api'
 
 pe 'docker images -f dangling=true'
 
-p "Suppression des dangling images, pour libérer de la place"
+p "Deleting dangling images, freeing disk space"
 pe "docker rmi \$(docker images -f dangling=true -q)"
 
-p "/!\ Docker only - Les dangling images n'existent pas avec containerd en image store"
+p "/!\ Docker only - dangling images are only visible when containerd is used as the image store"
 
 #Revert Dockerfile-golang21 golang version
 if [[ "$OSTYPE" != "darwin"* ]]; then
@@ -41,4 +41,4 @@ else
 fi
 
 cd ..
-p "Fini !"
+p "Done !"
