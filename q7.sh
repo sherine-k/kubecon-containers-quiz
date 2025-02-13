@@ -22,9 +22,9 @@ blob_digest=`skopeo inspect docker://cpe6munf.c1.de1.container-registry.ovh.net/
 p 'Delete the image'
 p "curl -X DELETE https://cpe6munf.c1.de1.container-registry.ovh.net/v2/public/ubi9/ubi-micro/manifests/$digest"
 curl -u sherine:Sh\&r1n\&@ -X DELETE https://cpe6munf.c1.de1.container-registry.ovh.net/v2/public/ubi9/ubi-micro/manifests/$digest
-p 'Verification: Does the tag still exist?'
+p 'Checking: Does the tag still exist?'
 pe 'skopeo inspect docker://cpe6munf.c1.de1.container-registry.ovh.net/public/ubi9/ubi-micro:latest'
-p 'Verification: what about the blob?'
+p 'Checking: what about the blob?'
 p "curl https://cpe6munf.c1.de1.container-registry.ovh.net/v2/public/ubi9/ubi-micro/blobs/$blob_digest -o /tmp/blob"
 curl https://cpe6munf.c1.de1.container-registry.ovh.net/v2/public/ubi9/ubi-micro/blobs/$blob_digest -o /tmp/blob
 pe 'ls -l /tmp/blob'
