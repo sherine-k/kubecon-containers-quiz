@@ -1,4 +1,4 @@
-# tnt-containers-quiz
+# kubecon-containers-quiz
 
 ## Pre-requisites
 
