@@ -40,6 +40,6 @@ pe 'docker image ls scraly/gophers-api:multi-arch'
 p 'Displaying the manifest'
 pe 'docker manifest inspect scraly/gophers-api:multi-arch'
 
-p 'Verifying on the registry: https://hub.docker.com/r/scraly/gophers-api/tags'
+p 'Checking on the registry: https://hub.docker.com/r/scraly/gophers-api/tags'
 
 p "Done !"

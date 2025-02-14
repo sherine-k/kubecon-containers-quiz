@@ -33,11 +33,11 @@ p "Signing the OCI artifact and pusing it to the private registry"
 #pe 'cosign sign --key cosign.key 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api'
 pe "cosign sign -y --key cosign.key $IMG_DIGEST"
 
-p "Verifying the signed image, using cosign"
+p "Checking the signed image, using cosign"
 #pe 'cosign verify 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api --key cosign.pub -o text | jq'
 pe "cosign verify $IMG_DIGEST --key cosign.pub -o text | jq"
 
-p 'Verifying the image on OVHcloud private registry: 79352h8v.c1.de1.container-registry.ovh.net'
+p 'Checking the image on OVHcloud private registry: 79352h8v.c1.de1.container-registry.ovh.net'
 # Access to the registry, green check mark
 # Click on the > icon that displays the associated cosign signature information
 # Cosign créé une signature qui est attachée a l'image sous forme de metadata externe (comme un nouveau tag specifique), mais ne modifie pas l'image orignale ni ne créé une copie
