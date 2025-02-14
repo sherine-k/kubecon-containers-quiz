@@ -17,19 +17,19 @@ clear
 
 #p "Q8. Avec Cosign, quand je signe une image, la signature est ... ?"
 
-# generate key pair with cosign
+# Generate key pair with cosign
 p 'Generating a key pair (private key + public key)'
 pe 'cosign generate-key-pair'
 
 p "It's recommended to sign an image by digest, and not by tag"
-p "Capturing the image digest"
+p "Retrieving the image digest"
 pe "docker inspect 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api | jq -r '.[0].RepoDigests[0]'"
 IMG_DIGEST=$(docker inspect 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api | jq -r '.[0].RepoDigests[0]')
 
-# sign the OCI artifact and push to the Managed Private Registry/Harbor instance and store the transparency log (metadata) in the public Rekor server"
+# Sign the OCI artifact and push to the Managed Private Registry/Harbor instance
+# and store the transparency log (metadata) in the public Rekor server"
 # at https://rekor.sigstore.dev/ (to verify the signature afterward)
 p "Signing the OCI artifact and pusing it to the private registry"
-#(et sauvegarde du transparency log (metadata) sur le public Rekor server)
 #pe 'cosign sign --key cosign.key 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api'
 pe "cosign sign -y --key cosign.key $IMG_DIGEST"
 
@@ -58,7 +58,7 @@ pe "crane manifest $(cosign triangulate 79352h8v.c1.de1.container-registry.ovh.n
 p "Tips: We can even add a special annotation/information to our signature"
 pe "cosign sign -y -a conf=kubecon_london --key cosign.key $IMG_DIGEST"
 
-# Verify the image is signed with cosign
+# Check the image is signed with cosign (and check the annotation appears)
 pe "cosign verify $IMG_DIGEST --key cosign.pub -o text | jq"
 
 p "Done !"

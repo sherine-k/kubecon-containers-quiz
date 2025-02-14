@@ -35,6 +35,7 @@ cd
 p "Pulling the multi-arch image locally"
 pe 'docker pull scraly/gophers-api:multi-arch'
 
+# Check the image have been correctly pulled
 pe 'docker image ls scraly/gophers-api:multi-arch'
 
 p 'Displaying the manifest'

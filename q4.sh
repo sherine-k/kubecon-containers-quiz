@@ -15,16 +15,25 @@ clear
 #p "Q4. Que se passe-t'il quand je push une image dans un registry ?"
 cd gophers-api
 
+# Login to the MPR
 p 'docker login -u kubecon 79352h8v.c1.de1.container-registry.ovh.net'
 docker login -u sunnytech -p SunnyTech2024 79352h8v.c1.de1.container-registry.ovh.net
+
+# Build the image
 pe 'docker build -t 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:latest .'
+
+# Check the image size locally
 pe 'docker image ls 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:latest'
+
+# Push the image in an OVHcloud Private Registry
 pe 'docker push 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:latest'
+
+# Check the image size on MPR and DockerHub
 p 'Checking on OVHcloud private registry: 79352h8v.c1.de1.container-registry.ovh.net'
 # 22.6MB en local → 10.82MiB sur OVHcloud Managed Private Registry / Harbor ;-)
 p 'Checking on Docker Hub: https://hub.docker.com/r/scraly/gophers-api/tags'
 
-# zstd conseillé pour les grosses images, IA !
+# zstd recommened for large images, IA!
 p 'Tips with Podman: changing compression mode during the push'
 p 'podman push docker.io/scraly/gophers-api:podman-zstd --compression-format=zstd'
 
