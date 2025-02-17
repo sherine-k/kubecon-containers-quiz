@@ -12,7 +12,7 @@ clear
 
 # QUESTION 4
 
-#p "Q4. Que se passe-t'il quand je push une image dans un registry ?"
+#p "Q4. What happens when I push an image to a registry?"
 cd gophers-api
 
 # Login to the MPR
