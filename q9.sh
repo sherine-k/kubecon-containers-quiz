@@ -37,8 +37,8 @@ p 'bom generate --image quay.io/skhoury/ubi9/ubi-micro:latest --output=sbom.json
 pe 'bom document outline scout_sbom.json'
 pe 'bom document outline bom_sbom.json'
 
-# p '# Attachons le sbom à l''\image'
-# pe 'oras attach 79352h8v.c1.de1.container-registry.ovh.net/public/ubi9/ubi-micro:latest --artifact-type application/spdx+json trivy_sbom.json:text/spdx+json'
+p 'Reminder: some registries already accept to refer the SBOM to the image'
+p 'oras attach 79352h8v.c1.de1.container-registry.ovh.net/public/ubi9/ubi-micro:latest --artifact-type application/spdx+json trivy_sbom.json:text/spdx+json'
 
 # p '# Regardons la registry... https://79352h8v.c1.de1.container-registry.ovh.net/harbor/projects/2/repositories/ubi9%2Fubi-micro/artifacts-tab'
 
