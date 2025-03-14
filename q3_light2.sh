@@ -23,7 +23,7 @@ cp -r ubi-micro9315-oci /tmp
 #pe 'tree /tmp/ubi-micro9315-oci # OCI'
 
 p 'Difference between manifests'
-pe 'cat /tmp/ubi-micro9315-dv2/manifest.json | jq # Docker'
+#pe 'cat /tmp/ubi-micro9315-dv2/manifest.json | jq # Docker'
 #pe 'cat /tmp/ubi-micro9315-oci/index.json | jq # OCI Index'
 
 pe 'cat /tmp/ubi-micro9315-oci/blobs/sha256/9fbffcdf4defed7649d256a8ed4ff9d2df18c5f80b19ded9e4e3d45430874a04 | jq # OCI Manifest'

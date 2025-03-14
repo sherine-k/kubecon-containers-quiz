@@ -39,8 +39,8 @@ p 'podman push docker.io/scraly/gophers-api:podman-zstd --compression-format=zst
 
 p "Tips: changing compression mode with Docker too"
 p "docker buildx build --output type=image,name=scraly/gophers-api:docker-zstd,oci-mediatypes=true,compression=zstd,compression-level=3,force-compression=true,push=true --push ."
-p "docker manifest inspect -v scraly/gophers-api:docker-zstd | grep 'application/vnd.oci.image.layer.v1.tar+zstd'"
-cat ../q4/gophers-api-docker-zstd-manifest.json | grep 'application/vnd.oci.image.layer.v1.tar+zstd'
+# p "docker manifest inspect -v scraly/gophers-api:docker-zstd | grep 'application/vnd.oci.image.layer.v1.tar+zstd'"
+# cat ../q4/gophers-api-docker-zstd-manifest.json | grep 'application/vnd.oci.image.layer.v1.tar+zstd'
 
 cd
 p "Done !"

@@ -32,15 +32,15 @@ pe 'docker buildx build --push --platform linux/arm64/v8,linux/amd64  --builder 
 #You can pull the image to get the version for your platform:
 
 cd
-p "Pulling the multi-arch image locally"
-pe 'docker pull scraly/gophers-api:multi-arch'
+# p "Pulling the multi-arch image locally"
+# pe 'docker pull scraly/gophers-api:multi-arch'
 
-# Check the image have been correctly pulled
-pe 'docker image ls scraly/gophers-api:multi-arch'
+# # Check the image have been correctly pulled
+# pe 'docker image ls scraly/gophers-api:multi-arch'
 
-p 'Displaying the manifest'
-pe 'docker manifest inspect scraly/gophers-api:multi-arch'
-
+# p 'Displaying the manifest'
+# pe 'docker manifest inspect scraly/gophers-api:multi-arch'
+pe 'crane manifest scraly/gophers-api:multi-arch'
 p 'Checking on the registry: https://hub.docker.com/r/scraly/gophers-api/tags'
 
 p "Done !"

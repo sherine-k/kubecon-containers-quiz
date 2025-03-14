@@ -29,9 +29,9 @@ IMG_DIGEST=$(docker inspect 79352h8v.c1.de1.container-registry.ovh.net/public/go
 # Sign the OCI artifact and push to the Managed Private Registry/Harbor instance
 # and store the transparency log (metadata) in the public Rekor server"
 # at https://rekor.sigstore.dev/ (to verify the signature afterward)
-p "Signing the OCI artifact and pusing it to the private registry"
+p "Signing the OCI artifact and pushing it to the private registry"
 #pe 'cosign sign --key cosign.key 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api'
-pe "cosign sign -y --key cosign.key $IMG_DIGEST"
+pe "cosign sign -y -a conf=kubecon_london --key cosign.key $IMG_DIGEST"
 
 p "Checking the signed image, using cosign"
 #pe 'cosign verify 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api --key cosign.pub -o text | jq'
@@ -55,11 +55,11 @@ pe "crane manifest $(cosign triangulate 79352h8v.c1.de1.container-registry.ovh.n
 #sha256-b229a8c3a6b9fc5873c97e60636e58fa0cee8cec449104cf3fa2bfa6639f3833.sig: Pulling from public/gophers-api
 #failed to unpack image on snapshotter overlayfs: mismatched image rootfs and manifest layers
 
-p "Tips: We can even add a special annotation/information to our signature"
-pe "cosign sign -y -a conf=kubecon_london --key cosign.key $IMG_DIGEST"
+# p "Tips: We can even add a special annotation/information to our signature"
+# pe "cosign sign -y -a conf=kubecon_london --key cosign.key $IMG_DIGEST"
 
-# Check the image is signed with cosign (and check the annotation appears)
-pe "cosign verify $IMG_DIGEST --key cosign.pub -o text | jq"
+# # Check the image is signed with cosign (and check the annotation appears)
+# pe "cosign verify $IMG_DIGEST --key cosign.pub -o text | jq"
 
 p "Done !"
 

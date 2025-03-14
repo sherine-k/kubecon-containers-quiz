@@ -25,14 +25,14 @@ pe 'cd /tmp/myhelm-v01/'
 pe 'tree .' 
 pe 'for i in `ls`; do echo "tar tvf $i"; tar tvf $i  2> /dev/null | grep helm; echo ============; done'
 
-pe 'crane export quay.io/skhoury/myhelm:v0.1 /tmp/myhelm_extracted'
-pe 'tar tvf /tmp/myhelm_extracted | grep helm'
+# pe 'crane export quay.io/skhoury/myhelm:v0.1 /tmp/myhelm_extracted'
+# pe 'tar tvf /tmp/myhelm_extracted | grep helm'
 #pe 'tar tvf /tmp/myhelm_extracted'
 
 cd -
 
 rm -fr /tmp/myhelm-v01/
-rm -fr /tmp/myhelm_extracted
+# rm -fr /tmp/myhelm_extracted
 # Fin Q5
 
 p "Done !"
