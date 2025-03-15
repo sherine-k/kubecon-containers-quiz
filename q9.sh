@@ -34,7 +34,7 @@ p 'Tips: bom, docker  scout and podman can also be used to generate an SBOM'
 p 'docker scout sbom myimage:mytag --output sbom.txt'
 p 'podman build . -t myimage:mytag --sbom-scanner-command trivy --sbom-output sbom.txt'
 p 'bom generate --image myimage:mytag --output=sbom.json --format json'
-p "/!\ Same image && Different tool = different SBOM!!!"
+p "/!\ Same image && different tool = different SBOM!!!"
 
 # pe 'bom document outline scout_sbom.json'
 # pe 'bom document outline bom_sbom.json'
@@ -50,6 +50,6 @@ p 'oras attach 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:lat
 # cat oras_discover_distrib.out
 
 cd ..
-p "Done !"
+p "Done!"
 
 #https://github.com/goharbor/harbor/issues/21276

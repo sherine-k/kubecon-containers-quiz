@@ -43,4 +43,4 @@ cd
 pe 'crane manifest scraly/gophers-api:multi-arch'
 p 'Checking on the registry: https://hub.docker.com/r/scraly/gophers-api/tags'
 
-p "Done !"
+p "Done!"

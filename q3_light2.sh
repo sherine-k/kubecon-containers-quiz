@@ -58,4 +58,4 @@ cd ..
 rm -fr /tmp/ubi-micro9315-oci
 rm -fr /tmp/ubi-micro9315-dv2
 
-p "Done !"
+p "Done!"

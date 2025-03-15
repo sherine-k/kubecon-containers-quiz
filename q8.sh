@@ -61,7 +61,7 @@ pe "crane manifest $(cosign triangulate 79352h8v.c1.de1.container-registry.ovh.n
 # # Check the image is signed with cosign (and check the annotation appears)
 # pe "cosign verify $IMG_DIGEST --key cosign.pub -o text | jq"
 
-p "Done !"
+p "Done!"
 
 # Clean image privée et publique
 rm cosign.key cosign.pub 

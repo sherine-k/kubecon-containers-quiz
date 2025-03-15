@@ -43,4 +43,4 @@ p "docker buildx build --output type=image,name=scraly/gophers-api:docker-zstd,o
 # cat ../q4/gophers-api-docker-zstd-manifest.json | grep 'application/vnd.oci.image.layer.v1.tar+zstd'
 
 cd
-p "Done !"
+p "Done!"
