@@ -38,7 +38,7 @@ cd
 # # Check the image have been correctly pulled
 # pe 'docker image ls scraly/gophers-api:multi-arch'
 
-# p 'Displaying the manifest'
+p 'Displaying the manifest'
 # pe 'docker manifest inspect scraly/gophers-api:multi-arch'
 pe 'crane manifest scraly/gophers-api:multi-arch'
 p 'Checking on the registry: https://hub.docker.com/r/scraly/gophers-api/tags'
