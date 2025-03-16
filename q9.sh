@@ -34,14 +34,14 @@ p 'Tips: bom, docker  scout and podman can also be used to generate an SBOM'
 p 'docker scout sbom myimage:mytag --output sbom.txt'
 p 'podman build . -t myimage:mytag --sbom-scanner-command trivy --sbom-output sbom.txt'
 p 'bom generate --image myimage:mytag --output=sbom.json --format json'
-p "/!\ Same image && different tool = different SBOM!!!"
+p "/!\ Same image && different SBOM generation tool = different SBOMs!!!"
 
 # pe 'bom document outline scout_sbom.json'
 # pe 'bom document outline bom_sbom.json'
 
-p 'Reminder: some registries already accept to refer the SBOM to the image'
-p 'oras attach 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:latest --artifact-type application/spdx+json trivy_sbom.json:text/spdx+json'
-
+p 'Cool tip: some registries already accept to refer the SBOM to the image'
+pe "oras attach 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:latest --artifact-type application/vnd.goharbor.harbor.sbom.v1 /tmp/result.json:application/vnd.goharbor.harbor.sbom.v1 --annotation \"org.opencontainers.artifact.description=SPDX JSON SBOM\""
+pe "oras discover 79352h8v.c1.de1.container-registry.ovh.net/public/gophers-api:latest"
 # p '# Regardons la registry... https://79352h8v.c1.de1.container-registry.ovh.net/harbor/projects/2/repositories/ubi9%2Fubi-micro/artifacts-tab'
 
 # pe 'oras discover 79352h8v.c1.de1.container-registry.ovh.net/public/ubi9/ubi-micro:latest'
