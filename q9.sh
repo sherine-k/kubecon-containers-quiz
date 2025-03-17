@@ -30,7 +30,7 @@ pe 'trivy image --format spdx-json --output /tmp/result.json 79352h8v.c1.de1.con
 p 'Display the spdx, with bom'
 pe 'bom document outline /tmp/result.json'
 
-p 'Tips: bom, docker, scout and podman can also be used to generate an SBOM'
+p 'Tips: bom, docker scout and podman can also be used to generate an SBOM'
 p 'docker scout sbom myimage:mytag --output sbom.txt'
 p 'podman build . -t myimage:mytag --sbom-scanner-command trivy --sbom-output sbom.txt'
 p 'bom generate --image myimage:mytag --output=sbom.json --format json'
