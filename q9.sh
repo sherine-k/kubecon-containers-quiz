@@ -21,7 +21,7 @@ cd q9
 
 # install bom
 # go install sigs.k8s.io/bom/cmd/bom@latest
-podman login -u sunnytech -p SunnyTech2024 79352h8v.c1.de1.container-registry.ovh.net
+#podman login -u sunnytech -p SunnyTech2024 79352h8v.c1.de1.container-registry.ovh.net
 oras login -u sunnytech -p SunnyTech2024 79352h8v.c1.de1.container-registry.ovh.net
 p 'Generate an SBOM with Trivy'
 # pe 'skopeo copy docker://registry.redhat.io/ubi9/ubi-micro:latest docker://79352h8v.c1.de1.container-registry.ovh.net/public/ubi9/ubi-micro:latest --remove-signatures'

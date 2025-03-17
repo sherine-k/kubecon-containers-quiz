@@ -33,7 +33,7 @@ p 'Checking on OVHcloud private registry: 79352h8v.c1.de1.container-registry.ovh
 # 22.6MB en local → 10.82MiB sur OVHcloud Managed Private Registry / Harbor ;-)
 p 'Checking on Docker Hub: https://hub.docker.com/r/scraly/gophers-api/tags'
 
-# zstd recommened for large images, IA!
+# zstd recommended for large images, IA!
 p 'Tips with Podman: changing compression mode during the push'
 p 'podman push docker.io/scraly/gophers-api:podman-zstd --compression-format=zstd'
 
